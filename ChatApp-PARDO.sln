@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp-PARDO.Android", "ChatApp-PARDO\ChatApp-PARDO.Android\ChatApp-PARDO.Android.csproj", "{AEE31542-80C6-48BC-8EC2-29B094FA7F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp-PARDO.iOS", "ChatApp-PARDO\ChatApp-PARDO.iOS\ChatApp-PARDO.iOS.csproj", "{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp-PARDO", "ChatApp-PARDO\ChatApp-PARDO\ChatApp-PARDO.csproj", "{5F67EA42-452E-4129-B681-F569159A677E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp-PARDO", "ChatApp-PARDO\ChatApp-PARDO\ChatApp-PARDO.csproj", "{5F67EA42-452E-4129-B681-F569159A677E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,24 +35,6 @@ Global
 		{AEE31542-80C6-48BC-8EC2-29B094FA7F55}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{AEE31542-80C6-48BC-8EC2-29B094FA7F55}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{AEE31542-80C6-48BC-8EC2-29B094FA7F55}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|Any CPU.Build.0 = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|Any CPU.Deploy.0 = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhone.Build.0 = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhone.Deploy.0 = Debug|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|Any CPU.Build.0 = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|Any CPU.Deploy.0 = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhone.ActiveCfg = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhone.Build.0 = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhone.Deploy.0 = Release|iPhone
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{DE672BC0-8AB9-4A33-9F0C-D874050CCCE1}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
 		{5F67EA42-452E-4129-B681-F569159A677E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F67EA42-452E-4129-B681-F569159A677E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F67EA42-452E-4129-B681-F569159A677E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
