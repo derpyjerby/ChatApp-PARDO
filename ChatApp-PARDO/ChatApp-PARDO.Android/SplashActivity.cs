@@ -12,7 +12,7 @@ using System.Text;
 
 namespace ChatApp_PARDO.Droid
 {
-    [Activity(Label = "ChatApp_PARDO", Icon = "@mipmap/icon", Theme = "@style/splashscreen", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "ChatApp_PARDO", Icon = "@mipmap/ic_launcher", Theme = "@style/splashscreen", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         protected override void OnResume()
