@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatApp_PARDO.MasterPage"
+             xmlns:local="clr-namespace:ChatApp_PARDO"
+             Title="MasterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="GreetingLabel" x:FieldModifier="public" Margin="5,10" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="EmailLabel" x:FieldModifier="public" Margin="5,10" HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="ListView" x:FieldModifier="public">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type local:MasterDetailItem}">
+                        <local:MasterDetailItem Title="ListPage" IconSource="ListIcon" TargetType="{x:Type local:ListPage}" />
+                        <local:MasterDetailItem Title="ControlsPage" IconSource="ControlIcon" TargetType="{x:Type local:ControlsPage}" />
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding IconSource}" />
+                                <Label Grid.Column="1" Text="{Binding Title}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <local:CustomButton x:Name="LogoutButton" Margin="5,10" Text="Logout" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand" BackgroundColor="Red" TextColor="White" BorderRadius="5" Clicked="LogoutButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

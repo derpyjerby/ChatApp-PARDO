@@ -9,7 +9,7 @@ using Android.Widget;
 using Android.OS;
 
 namespace ChatApp_PARDO.Droid
-{
+{   
     [Activity(Label = "ChatApp_PARDO", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

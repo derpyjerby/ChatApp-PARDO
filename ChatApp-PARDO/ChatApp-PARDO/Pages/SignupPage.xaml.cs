@@ -9,12 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace ChatApp_PARDO
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignupPage : ContentPage
     {
         public SignupPage()
         {
             InitializeComponent();
+        }
+
+        private async void SignIn_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync(true);
         }
     }
 }

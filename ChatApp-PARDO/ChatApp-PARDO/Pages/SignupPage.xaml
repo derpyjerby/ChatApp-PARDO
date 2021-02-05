@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:ChatApp_PARDO"
              x:Class="ChatApp_PARDO.SignupPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Image x:Name="logo" Source="Logo" WidthRequest="320" Aspect="AspectFill"/>
+        <Label Text="Sign up" HorizontalOptions="Start" Margin="5,0,5,0" TextColor="Black" FontAttributes="Bold"/>
+        <Entry x:Name="NameEntry" Placeholder="Input name" Style="{StaticResource EntryStyle}"/>
+        <Entry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
+        <Entry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" Style="{StaticResource EntryStyle}"/>
+        <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
+        <local:CustomButton Text="Sign Up" BackgroundColor="Green" BorderRadius="5" HorizontalOptions="Center" TextColor="White"/>
+        <Label Text="Sign in" HorizontalOptions="Center" Margin="5,0,5,0" TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SignIn_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
 </ContentPage>

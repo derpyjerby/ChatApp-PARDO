@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatApp_PARDO.ListPage"
+             Title="ListPage"
+             xmlns:local="clr-namespace:ChatApp_PARDO">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="To Do List" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            <Entry x:Name="ToDoEntry" Placeholder="Input a thing to do here.." HorizontalOptions="FillAndExpand" VerticalOptions="Center" 
+                   Grid.Column="0" Grid.Row="1" Margin="5,0" Keyboard="Text" ReturnType="Done"/>
+            <local:CustomButton Text="Add" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BorderRadius="5" BackgroundColor="Blue" TextColor="White" 
+                    Grid.Row="1" Grid.Column="1" Margin="5,0" Clicked="AddButton_Clicked"/>
+            <ListView x:Name="toDoListView" BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill" 
+                      SeparatorVisibility="None" HasUnevenRows="true" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <ListView.Header>
+                    <Label Text="List starts here.." TextColor="Black" HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center"/>
+                </ListView.Header>
+                <ListView.Footer>
+                    <Label Text="List ends here.." TextColor="Black" HorizontalOptions="Fill" 
+                           HorizontalTextAlignment="Center"/>
+                </ListView.Footer>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="8*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <ImageButton Source="DoneIcon" BackgroundColor="Green" Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                                    Clicked="DoneButton_Clicked" Grid.Column="0" ClassId="{Binding id}">
+                                    <!--Trigger-->
+                                    <ImageButton.Triggers>
+                                        <DataTrigger TargetType="ImageButton" Binding="{Binding isDone}" Value="true">
+                                            <Setter Property="BackgroundColor" Value="Gray" />
+                                        </DataTrigger>
+                                    </ImageButton.Triggers>
+                                </ImageButton>
+                                <Entry Text="{Binding text}" ClassId="{Binding id}" HorizontalOptions="FillAndExpand" IsEnabled="True" VerticalOptions="FillAndExpand" Margin="5" 
+                                       Grid.Column="1" Completed="ItemEntry_Completed">
+                                    <!--Trigger-->
+                                    <Entry.Triggers>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding isDone}" Value="true">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                                <ImageButton Source="DeleteIcon" BackgroundColor="Red" Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                                    Clicked="DeleteButton_Clicked" Grid.Column="2" ClassId="{Binding id}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
