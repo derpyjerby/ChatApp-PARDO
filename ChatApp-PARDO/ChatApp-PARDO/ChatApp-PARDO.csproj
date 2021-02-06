@@ -11,11 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CustomViews\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -25,12 +30,21 @@
     <Compile Update="Pages\ControlsPage.xaml.cs">
       <DependentUpon>ControlsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\ResetPasswordPage.xaml.cs">
+      <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\SampleTabbedPage.xaml.cs">
+      <DependentUpon>SampleTabbedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="CustomViews\Loading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\ListPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -40,7 +54,7 @@
     <EmbeddedResource Update="Pages\ProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SampleTabbedPage.xaml">
+    <EmbeddedResource Update="Pages\ResetPasswordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\SignupPage.xaml">

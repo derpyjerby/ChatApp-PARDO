@@ -9,9 +9,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ChatApp_PARDO
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProfilePage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ProfilePage : ContentPage
+    {
         public static readonly BindableProperty NameProperty = BindableProperty.Create(nameof(Name), typeof(string), typeof(ProfilePage), "");
         public string Name
         {
@@ -25,22 +25,25 @@ namespace ChatApp_PARDO
             get { return (string)GetValue(EmailProperty); }
             set { SetValue(EmailProperty, value); }
         }
-
-        public ProfilePage ()
-		{
-			InitializeComponent ();
-		}
-
-        private void LogoutButton_Clicked(object sender, EventArgs e)
+        DataClass dataClass = DataClass.GetInstance;
+        public ProfilePage()
         {
-            //Remove all saved properties
-            //Application.Current.Properties.Clear();
-            //Remove specific properties
-            Application.Current.Properties.Remove("email");
-            Application.Current.Properties.Remove("name");
-            Application.Current.SavePropertiesAsync();
+            InitializeComponent();
+        }
 
-            Application.Current.MainPage = new MainPage();
+        private async void LogoutButton_Clicked(object sender, EventArgs e)
+        {
+            FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
+            res = DependencyService.Get<iFirebaseAuth>().SignOut();
+
+            if (res.Status == true)
+            {
+                App.Current.MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                await DisplayAlert("Error", res.Response, "Okay");
+            }
         }
     }
 }

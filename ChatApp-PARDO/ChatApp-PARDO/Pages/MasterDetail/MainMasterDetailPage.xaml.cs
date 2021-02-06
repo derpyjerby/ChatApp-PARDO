@@ -9,24 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace ChatApp_PARDO
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainMasterDetailPage : MasterDetailPage
-	{
-		public MainMasterDetailPage ()
-		{
-			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
-            masterPage.ListView.ItemSelected += OnItemSelected;
-        }
-
-        public MainMasterDetailPage(string name, string email)
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainMasterDetailPage : MasterDetailPage
+    {
+        DataClass dataClass = DataClass.GetInstance;
+        public MainMasterDetailPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            masterPage.GreetingLabel.Text = "Welcome "+name+"!";
-            masterPage.EmailLabel.Text = email;
             masterPage.ListView.ItemSelected += OnItemSelected;
-            
+            masterPage.GreetingLabel.Text = "Welcome " + dataClass.loggedInUser.name + "!";
+            masterPage.EmailLabel.Text = dataClass.loggedInUser.email;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

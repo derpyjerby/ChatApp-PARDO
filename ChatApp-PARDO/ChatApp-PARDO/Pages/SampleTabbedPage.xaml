@@ -7,7 +7,7 @@
              android:TabbedPage.ToolbarPlacement="Top"
              android:TabbedPage.BarItemColor="DarkGray"
              android:TabbedPage.BarSelectedItemColor="White">
-             <!--BarBackgroundColor="#1976D2"-->
+    <!--BarBackgroundColor="#1976D2"-->
     <!--<NavigationPage Title="ListPage">
         <x:Arguments>
             <local:ListPage/>

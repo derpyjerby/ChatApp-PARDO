@@ -41,8 +41,7 @@ namespace ChatApp_PARDO
             if (choice)
             {
                 ToDoModel item = new ToDoModel();
-                foreach (var i in toDoList)
-                {
+                foreach (var i in toDoList){
                     if (i.id == Convert.ToInt32(btn.ClassId))
                         item = i;
                 }

@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ChatApp_PARDO
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SampleTabbedPage : TabbedPage
+	public partial class Loading : ContentView
 	{
-		DataClass dataClass = DataClass.GetInstance;
-		public SampleTabbedPage()
+		public Loading()
 		{
 			InitializeComponent();
-			NavigationPage.SetHasNavigationBar(this, false);
-			profilePage.Name = dataClass.loggedInUser.name;
-			profilePage.Email = dataClass.loggedInUser.email;
 		}
 	}
 }

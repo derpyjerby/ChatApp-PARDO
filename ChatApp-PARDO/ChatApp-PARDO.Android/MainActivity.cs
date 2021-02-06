@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -7,9 +6,10 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Firebase;
 
 namespace ChatApp_PARDO.Droid
-{   
+{
     [Activity(Label = "ChatApp_PARDO", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -18,8 +18,9 @@ namespace ChatApp_PARDO.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
+            FirebaseApp.InitializeApp(this);
 
+            base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

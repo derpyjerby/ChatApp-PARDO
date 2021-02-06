@@ -3,20 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ChatApp_PARDO"
              x:Class="ChatApp_PARDO.MainPage">
-    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Image x:Name="logo" Source="Logo" WidthRequest="320" Aspect="AspectFill"/>
-        <Label Text="Sign in" HorizontalOptions="Start" Margin="5,0,5,0" TextColor="Black" FontAttributes="Bold" 
-               FontFamily="Roboto-Thin.ttf#Roboto Thin"/>
-        <Entry x:Name="NameEntry" Placeholder="Input name" Style="{StaticResource EntryStyle}"/>
-        <Entry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
-        <Entry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
-        <local:CustomButton Text="Enter" BackgroundColor="Green" BorderRadius="5" HorizontalOptions="Center" TextColor="White" Clicked="Button_Clicked"
-                            FontFamily="Roboto-Thin.tff#Roboto Thin"/>
-        <Label Text="Sign up" HorizontalOptions="Center" Margin="5,0,5,0" TextColor="Black" 
-               FontFamily="Roboto-Thin.ttf#Roboto Thin">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image x:Name="logo" Source="Logo" WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='width=320'}" Aspect="AspectFill"/>
+            <Label Text="Sign in" HorizontalOptions="Start" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" FontAttributes="Bold" 
+                   FontFamily="Roboto-Thin.ttf#Roboto Thin"/>
+            <Entry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
+            <local:CustomButton Text="Enter" BackgroundColor="Green" BorderRadius="5" HorizontalOptions="Center" TextColor="White" Clicked="Button_Clicked"
+                                FontFamily="Roboto-Thin.tff#Roboto Thin"/>
+            <Label Text="Sign up" HorizontalOptions="Center" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" 
+                   FontFamily="Roboto-Thin.ttf#Roboto Thin">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignUp_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <Label Text="Forgot Password" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=0,0,0,5'}" TextColor="Black" 
+                   FontFamily="Roboto-Thin.ttf#Roboto Thin" Grid.Row="0" Grid.Column="0">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="SignUp_Tapped"/>
+                <TapGestureRecognizer Tapped="ForgotPassword_Tapped"/>
             </Label.GestureRecognizers>
         </Label>
-    </StackLayout>
+        <local:Loading Grid.Row="0" Grid.Column="0" x:Name="loading" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False"/>
+    </Grid>
 </ContentPage>

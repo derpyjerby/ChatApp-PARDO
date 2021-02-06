@@ -1,11 +1,11 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Sample;
-using Sample.Droid;
+using ChatApp_PARDO;
+using ChatApp_PARDO.Droid;
 using Android.Content;
 
 [assembly: ExportRenderer(typeof(ListView), typeof(CustomListViewRenderer))]
-namespace Sample.Droid
+namespace ChatApp_PARDO.Droid
 {
     class CustomListViewRenderer : ListViewRenderer
     {
