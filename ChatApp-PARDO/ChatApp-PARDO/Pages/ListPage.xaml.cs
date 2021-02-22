@@ -30,7 +30,7 @@ namespace ChatApp_PARDO
             }
             else
             {
-                DisplayAlert("Error", "Cannot add empty entry to list", "Okay");
+                DisplayAlert("Error", "Cannot add empty entry to list", " Okay");
             }
         }
 

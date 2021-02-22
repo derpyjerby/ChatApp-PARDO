@@ -8,11 +8,11 @@
             <Image x:Name="logo" Source="Logo" WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='width=320'}" Aspect="AspectFill"/>
             <Label Text="Sign in" HorizontalOptions="Start" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" FontAttributes="Bold" 
                    FontFamily="Roboto-Thin.ttf#Roboto Thin"/>
-            <Entry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
-            <Entry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
-            <local:CustomButton Text="Enter" BackgroundColor="Green" BorderRadius="5" HorizontalOptions="Center" TextColor="White" Clicked="Button_Clicked"
+            <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
+            <local:CustomButton Text="Sign in" BackgroundColor="LightGreen" BorderRadius="10" Margin="5,5,5,5" HorizontalOptions="Fill" TextColor="Black" Clicked="Button_Clicked"
                                 FontFamily="Roboto-Thin.tff#Roboto Thin"/>
-            <Label Text="Sign up" HorizontalOptions="Center" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" 
+            <Label Text="Create an account" HorizontalOptions="Center" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" 
                    FontFamily="Roboto-Thin.ttf#Roboto Thin">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="SignUp_Tapped"/>

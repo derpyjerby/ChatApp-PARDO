@@ -4,16 +4,11 @@
              x:Class="ChatApp_PARDO.SampleTabbedPage"
              xmlns:local="clr-namespace:ChatApp_PARDO"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-             android:TabbedPage.ToolbarPlacement="Top"
+             android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="DarkGray"
-             android:TabbedPage.BarSelectedItemColor="White">
-    <!--BarBackgroundColor="#1976D2"-->
-    <!--<NavigationPage Title="ListPage">
-        <x:Arguments>
-            <local:ListPage/>
-        </x:Arguments>
-    </NavigationPage>-->
-    <local:ListPage Title="ListPage" Icon="ListIcon"/>
-    <local:ControlsPage Title="ControlsPage" Icon="ControlIcon"/>
-    <local:ProfilePage x:Name="profilePage" Title="ProfilePage" Icon="ProfileIcon"/>
+             android:TabbedPage.BarSelectedItemColor="White"
+             BarBackgroundColor="#1976D2">
+    
+    <local:ListPage Title="Chat" Icon="ChatIcon"/>
+    <local:ProfilePage x:Name="profilePage" Title="Profile" Icon="PersonIcon"/>
 </TabbedPage>

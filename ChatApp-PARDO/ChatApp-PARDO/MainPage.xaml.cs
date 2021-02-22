@@ -22,13 +22,7 @@ namespace ChatApp_PARDO
         {
             if (string.IsNullOrEmpty(EmailEntry.Text) && string.IsNullOrEmpty(PasswordEntry.Text))
             {
-                bool retryBool = await DisplayAlert("Error", "Missing field/s. Retry?", "Yes", "No");
-                if (retryBool)
-                {
-                    EmailEntry.Text = string.Empty;
-                    PasswordEntry.Text = string.Empty;
-                    EmailEntry.Focus();
-                }
+                 DisplayAlert("Error", "Missing fields", "Okay");
             }
             else
             {
