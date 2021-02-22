@@ -16,6 +16,20 @@ namespace ChatApp_PARDO
         string _name { get; set; }
         public string name { get { return _name; } set { _name = value; OnPropertyChanged(nameof(name)); } }
 
+        List<string>_contacts { get; set; }
+
+        public List<string> contacts 
+        { 
+            get 
+            { 
+                return _contacts; 
+            } 
+            set 
+            { 
+                _contacts = value; 
+                OnPropertyChanged(nameof(contacts)); 
+            } 
+        }
         /// <summary>
         /// User Type
         /// 0 - Email
