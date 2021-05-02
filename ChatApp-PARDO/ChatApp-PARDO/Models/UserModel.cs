@@ -39,8 +39,8 @@ namespace ChatApp_PARDO
         int _userType { get; set; }
         public int userType { get { return _userType; } set { _userType = value; OnPropertyChanged(nameof(userType)); } }
 
-        DateTime _created_at { get; set; }
-        public DateTime created_at { get { return _created_at; } set { _created_at = value; OnPropertyChanged(nameof(created_at)); } }
+        string _created_at { get; set; }
+        public string created_at { get { return _created_at; } set { _created_at = value; OnPropertyChanged(nameof(created_at)); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")

@@ -6,22 +6,30 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:ChatApp_PARDO"
              x:Class="ChatApp_PARDO.SignupPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CustomEntryStyle" TargetType="local:CustomEntry">
+                <Setter Property="Text" Value=""/>
+                <Setter Property="IsCurvedCornersEnabled" Value="True"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Image x:Name="logo" Source="Logo" WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='width=320'}" Aspect="AspectFill"/>
-            <Label Text="Sign up" HorizontalOptions="Start" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black" FontAttributes="Bold"/>
-            <Entry x:Name="NameEntry" Placeholder="Input name" Style="{StaticResource EntryStyle}"/>
-            <Entry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource EntryStyle}"/>
-            <Entry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" Style="{StaticResource EntryStyle}"/>
-            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm password" IsPassword="True" ReturnType="Done" Style="{StaticResource EntryStyle}"/>
-            <local:CustomButton Text="Sign Up" BackgroundColor="Green" BorderRadius="5" HorizontalOptions="Center" TextColor="White" Clicked="SignUp_Clicked"/>
-            <Label Text="Sign in" HorizontalOptions="Center" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=5,0,5,0'}" TextColor="Black">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="SignIn_Tapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-        <local:Loading Grid.Row="0" Grid.Column="0" x:Name="loading" 
-                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False"/>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Image x:Name="logo" Source="Logo" Aspect="AspectFill"/>
+                <local:CustomEntry x:Name="NameEntry" Placeholder="Input name" Style="{StaticResource CustomEntryStyle}"/>
+                <local:CustomEntry x:Name="EmailEntry" Placeholder="Input email" Keyboard="Email" Style="{StaticResource CustomEntryStyle}"/>
+                <local:CustomEntry x:Name="PasswordEntry" Placeholder="Input password" IsPassword="True" Style="{StaticResource CustomEntryStyle}"/>
+                <local:CustomEntry x:Name="ConfirmPasswordEntry" Placeholder="Confirm password" IsPassword="True" ReturnType="Done" Style="{StaticResource CustomEntryStyle}"/>
+                <local:CustomButton Text="Sign Up" BackgroundColor="LightGreen" BorderRadius="10" Margin="5,5,5,5" HorizontalOptions="Fill" TextColor="Black" Clicked="SignUp_Clicked"/>
+                <local:CustomButton Text="Sign in" BorderRadius="10" Margin="5,5,5,5" HorizontalOptions="Fill" TextColor="Black" Clicked="SignIn_Tapped"/>
+
+            </StackLayout>
+            <local:Loading Grid.Row="0" Grid.Column="0" x:Name="loading" 
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False"/>
+
     </Grid>
 </ContentPage>

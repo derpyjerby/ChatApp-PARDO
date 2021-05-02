@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomRenderers\Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
@@ -24,11 +28,14 @@
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\ListPage.xaml.cs">
-      <DependentUpon>ListPage.xaml</DependentUpon>
+    <Compile Update="Pages\Conversation.xaml.cs">
+      <DependentUpon>Conversation.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\ControlsPage.xaml.cs">
-      <DependentUpon>ControlsPage.xaml</DependentUpon>
+    <Compile Update="Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\ResetPasswordPage.xaml.cs">
       <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
@@ -45,10 +52,13 @@
     <EmbeddedResource Update="CustomViews\Loading.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ListPage.xaml">
+    <EmbeddedResource Update="Pages\Conversation.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ControlsPage.xaml">
+    <EmbeddedResource Update="Pages\SearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ChatPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\ProfilePage.xaml">

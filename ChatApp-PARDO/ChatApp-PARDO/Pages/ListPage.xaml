@@ -19,8 +19,7 @@
                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
             <Entry x:Name="ToDoEntry" Placeholder="Input a thing to do here.." HorizontalOptions="FillAndExpand" VerticalOptions="Center" 
                    Grid.Column="0" Grid.Row="1" Margin="5,0" Keyboard="Text" ReturnType="Done"/>
-            <local:CustomButton Text="Add" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BorderRadius="5" BackgroundColor="Blue" TextColor="White" 
-                    Grid.Row="1" Grid.Column="1" Margin="5,0" Clicked="AddButton_Clicked"/>
+
             <ListView x:Name="toDoListView" BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill" 
                       SeparatorVisibility="None" HasUnevenRows="true" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                 <ListView.Header>

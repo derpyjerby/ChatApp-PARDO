@@ -18,11 +18,20 @@ namespace ChatApp_PARDO
             EmailEntry.Text = dataClass.loggedInUser != null ? dataClass.loggedInUser.email : "";
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void SignInButton_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(EmailEntry.Text) && string.IsNullOrEmpty(PasswordEntry.Text))
+            if (string.IsNullOrEmpty(EmailEntry.Text) || string.IsNullOrEmpty(PasswordEntry.Text))
             {
-                 DisplayAlert("Error", "Missing fields", "Okay");
+                if (string.IsNullOrEmpty(EmailEntry.Text))
+                {
+                    EmailEntry.BorderColor = Color.Red;
+                }
+                if (string.IsNullOrEmpty(PasswordEntry.Text))
+                {
+                    PasswordEntry.BorderColor = Color.Red;
+                }
+
+                await DisplayAlert("Error", "Missing fields", "Okay");
             }
             else
             {
@@ -69,6 +78,16 @@ namespace ChatApp_PARDO
 
             //logo.Opacity = 0.5;//animation without time
             //await logo.FadeTo(0.1, 5000);//animation with time
+        }
+
+        private void EmailEntry_Inputted (object sender, TextChangedEventArgs e)
+        {
+            EmailEntry.BorderColor = Color.Black;
+        }
+
+        private void PasswordEntry_Inputted(object sender, TextChangedEventArgs e)
+        {
+            PasswordEntry.BorderColor = Color.Black;
         }
 
         protected override void OnDisappearing()

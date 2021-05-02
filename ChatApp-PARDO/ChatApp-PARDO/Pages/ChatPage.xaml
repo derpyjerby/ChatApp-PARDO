@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatApp_PARDO.ChatPage"
+             Title="ChatPage"
+             xmlns:local="clr-namespace:ChatApp_PARDO">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Grid.Column="0">
+                                <local:CustomEntry Text="" Completed="searchEntry_Completed" Placeholder="Search user email" x:Name="searchEntry" TextChanged="searchEntry_TextChanged"  BorderColor="Black" Keyboard="Default"  ReturnType="Search"  BorderWidth="{Binding Converter={StaticResource scale}, ConverterParameter='width=2'}" IsCurvedCornersEnabled="True"/>
+                                <local:CustomButton x:Name="clearEntry" IsVisible="False" Clicked="clearEntry_Clicked" Text="X" WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='width=40'}" HeightRequest="{Binding Converter={StaticResource scale}, ConverterParameter='height=5'}" FontSize="{Binding Converter={StaticResource scale}, ConverterParameter='fontSize=8'}" Margin="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=0,2,5,2'}" HorizontalOptions="End"/>
+                            </Grid>
+                            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label IsVisible="False" x:Name="emptyListLabel" TextColor="Black" Text="You have no contacts as of the moment" 
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"/>
+                                <ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="True" x:Name="contactsList" 
+                                       SeparatorVisibility="None" Margin="0,0,0,0" IsVisible="False" SelectionMode="None" ItemTapped="contactsList_ItemTapped">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout HeightRequest="70">
+                                                    <Frame Padding="0" CornerRadius="5" IsClippedToBounds="True" HasShadow="False" BorderColor="LightBlue" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" Margin="10,5,10,5">
+                                                        <Frame.Triggers>
+                                                            <DataTrigger TargetType="Frame" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                                <Setter Property="BorderColor" Value="LightGreen"/>
+                                                            </DataTrigger>
+                                                        </Frame.Triggers>
+                                                        <Grid RowSpacing="0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="5*"/>
+                                                                <RowDefinition Height="5*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Label Text="{Binding contactName[0]}" Margin="5,0,0,0" Grid.Column="0" Grid.Row="0"
+                                                           HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start"
+                                                           VerticalTextAlignment="End" FontSize="Large">
+                                                                <Label.Triggers>
+                                                                    <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                                        <Setter Property="Text" Value="{Binding contactName[1]}"/>
+                                                                    </DataTrigger>
+                                                                </Label.Triggers>
+                                                            </Label>
+                                                            <Label Text="{Binding contactEmail[0]}" Margin="5,0,0,0" Grid.Column="0" Grid.Row="1"
+                                                           HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start"
+                                                           VerticalTextAlignment="Start" FontSize="Medium">
+                                                                <Label.Triggers>
+                                                                    <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                                        <Setter Property="Text" Value="{Binding contactEmail[1]}"/>
+                                                                    </DataTrigger>
+                                                                </Label.Triggers>
+                                                            </Label>
+                                                        </Grid>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                x:Name="aiLayout"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                >
+                    <ActivityIndicator
+                    x:Name="ai"
+                    IsRunning="False"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                
+                    />
+                </StackLayout>
+            </AbsoluteLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

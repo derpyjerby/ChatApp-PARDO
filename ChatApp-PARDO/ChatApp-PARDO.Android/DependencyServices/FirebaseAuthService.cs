@@ -76,7 +76,8 @@ namespace ChatApp_PARDO.Droid
                         email = result.User.Email,
                         name = yourModel.name,
                         userType = yourModel.userType,
-                        created_at = yourModel.created_at
+                        created_at = yourModel.created_at,
+                        contacts = yourModel.contacts
                     };
                     dataClass.isSignedIn = true;
                 }
@@ -150,7 +151,7 @@ namespace ChatApp_PARDO.Droid
                     email = email,
                     name = defaultName,
                     userType = 0,
-                    created_at = DateTime.UtcNow
+                    created_at = DateTime.UtcNow.ToString()
                 };
                 return response;
             }
@@ -159,6 +160,11 @@ namespace ChatApp_PARDO.Droid
                 FirebaseAuthResponseModel response = new FirebaseAuthResponseModel() { Status = false, Response = ex.Message };
                 return response;
             }
+        }
+
+        ContactModel iFirebaseAuth.GenerateID(UserModel account)
+        {
+            throw new NotImplementedException();
         }
     }
 }

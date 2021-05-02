@@ -26,9 +26,26 @@ namespace ChatApp_PARDO
 
         private async void SignUp_Clicked(object sender, EventArgs e)
         {
-            if (EmailEntry.Text.Length == 0 || PasswordEntry.Text.Length == 0 || ConfirmPasswordEntry.Text.Length == 0)
+            if (NameEntry.Text.Length == 0 ||EmailEntry.Text.Length == 0 || PasswordEntry.Text.Length == 0 || ConfirmPasswordEntry.Text.Length == 0)
             {
-                await DisplayAlert("Error", "Missing field/s", "Okay");
+                if (NameEntry.Text.Length == 0)
+                {
+                    NameEntry.BorderColor = Color.Red;
+                }
+                if (EmailEntry.Text.Length == 0)
+                {
+                    EmailEntry.BorderColor = Color.Red;
+                }
+                if (PasswordEntry.Text.Length == 0)
+                {
+                    PasswordEntry.BorderColor = Color.Red;
+                }
+                if (ConfirmPasswordEntry.Text.Length == 0)
+                {
+                    ConfirmPasswordEntry.BorderColor = Color.Red;
+                }
+                await DisplayAlert("Error", "Missing fields", "Okay");
+
             }
             else
             {

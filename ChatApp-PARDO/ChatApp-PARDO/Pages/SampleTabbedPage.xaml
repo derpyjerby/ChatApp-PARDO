@@ -9,6 +9,6 @@
              android:TabbedPage.BarSelectedItemColor="White"
              BarBackgroundColor="#1976D2">
     
-    <local:ListPage Title="Chat" Icon="ChatIcon"/>
+    <local:ChatPage Title="Chat" Icon="ChatIcon"/>
     <local:ProfilePage x:Name="profilePage" Title="Profile" Icon="PersonIcon"/>
 </TabbedPage>

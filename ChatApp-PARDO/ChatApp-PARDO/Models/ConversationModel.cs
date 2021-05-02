@@ -41,13 +41,13 @@ namespace ChatApp_PARDO
         string _converseeID { get; set; }
         public string converseeID { get { return _converseeID; } set { _converseeID = value; OnPropertyChanged(nameof(converseeID)); } }
 
-        long _created_at
+        string _created_at
         {
             get;
             set;
         }
 
-        public long created_at
+       public string created_at
         {
             get
             {

@@ -7,10 +7,17 @@
              xmlns:local="clr-namespace:ChatApp_PARDO">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label x:Name="NameLabel" HorizontalOptions="CenterAndExpand" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Name}"/>
-            <Label x:Name="EmailLabel" HorizontalOptions="CenterAndExpand" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Email}"/>
-            <local:CustomButton x:Name="LogoutButton" Margin="5,10" Text="Logout" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="EndAndExpand" BackgroundColor="Red" TextColor="White" BorderRadius="5" Clicked="LogoutButton_Clicked"/>
+            
+<Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" BackgroundColor="#1C86EE" HorizontalOptions="Center" VerticalOptions="Start" Padding="4" >
+                <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" BackgroundColor="#60AFFE" HorizontalOptions="Center" VerticalOptions="Start" Margin="0" Padding="5" IsClippedToBounds="True">
+                    <Image Source="profileIcon.png" HeightRequest="20" WidthRequest="20" ></Image>
+                </Frame>
+            </Frame>
+            
+            <Label x:Name="NameLabel" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Name}"/>
+            <Label x:Name="EmailLabel" FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Email}"/>
+            <local:CustomButton x:Name="LogoutButton" Margin="5,10" Text="Sign out" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand" BackgroundColor="LightGray" TextColor="Black" BorderRadius="5" Clicked="LogoutButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

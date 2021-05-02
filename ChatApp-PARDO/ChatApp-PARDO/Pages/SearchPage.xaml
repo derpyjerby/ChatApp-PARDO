@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatApp_PARDO.SearchPage"
+             xmlns:local="clr-namespace:ChatApp_PARDO">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <local:CustomButton x:Name="closeSearchPage" Clicked="closeSearchPage_Clicked" Text="X" WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='width=35'}" HeightRequest="{Binding Converter={StaticResource scale}, ConverterParameter='height=35'}" FontSize="Small" HorizontalOptions="End"/>
+
+                        <ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="True" x:Name="resultsList" 
+                                  SeparatorVisibility="None" Margin="5,5,5,0" IsVisible="False" ItemTapped="resultsList_ItemTapped" SelectionMode="None">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <StackLayout HeightRequest="70">
+                                            <Frame Padding="0" CornerRadius="5" IsClippedToBounds="True" HasShadow="False" BorderColor="LightBlue" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" Margin="10,5,10,5">
+                                                <Frame.Triggers>
+                                                    <DataTrigger TargetType="Frame" Binding="{Binding uid}" Value="True">
+                                                        <Setter Property="BorderColor" Value="LightGreen"/>
+                                                    </DataTrigger>
+                                                </Frame.Triggers>
+                                                <Grid RowSpacing="0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="5*"/>
+                                                        <RowDefinition Height="5*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Label Text="{Binding name}" Margin="5,0,0,0" Grid.Column="0" Grid.Row="0"
+                                                       HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="End" FontSize="Large"/>
+                                                    <Label Text="{Binding email}" Margin="5,0,0,0" Grid.Column="0" Grid.Row="1"
+                                                       HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="Start" FontSize="Medium"/>
+                                                </Grid>
+                                            </Frame>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                x:Name="aiLayout"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                >
+                    <ActivityIndicator
+                    x:Name="ai"
+                    IsRunning="False"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                
+                    />
+                </StackLayout>
+            </AbsoluteLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

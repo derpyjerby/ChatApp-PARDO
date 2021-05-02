@@ -12,5 +12,6 @@ namespace ChatApp_PARDO
         FirebaseAuthResponseModel SignOut();
         FirebaseAuthResponseModel IsLoggedIn();
         Task<FirebaseAuthResponseModel> ResetPassword(string email);
+        ContactModel GenerateID(UserModel account);
     }
 }
